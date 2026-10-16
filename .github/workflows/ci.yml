@@ -45,6 +45,7 @@ jobs:
     permissions:
       contents: read
     with:
+      initial-build-runs-on: "runs-on/fleet=linux-standard/env=ibm"
       # We can't start Linux containers on GitHub Actions' Windows VMs,
       # so we skip Elasticsearch tests on Windows.
       # See https://github.com/actions/runner-images/issues/1143#issuecomment-972929995
