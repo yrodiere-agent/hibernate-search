@@ -188,7 +188,7 @@ jobs:
           fetch-depth: 0
       - name: Compute entry label
         run: |
-          echo "ENTRY_LABEL=${_LABEL}" >> "$GITHUB_ENV"
+          echo "ENTRY_LABEL=${_LABEL//[\":<>|*?\\\/]/-}" >> "$GITHUB_ENV"
           echo "SUREFIRE_ENV=${_LABEL//[^a-zA-Z0-9_+-]/_}" >> "$GITHUB_ENV"
         env:
           _LABEL: >-
